@@ -40,7 +40,7 @@ if [[ -n "$port_range_udp" ]]; then
   /usr/bin/nmap -A -sU -T4 -Pn "$target" -oA "${current_path}/${output_base}_udp" --stats-every=1m -p "$port_range_udp"
 fi
 
-rm "${current_path}/${output_base}_udp_init.*"
-rm "${current_path}/${output_base}_tcp_init.*"
+rm -f "${current_path}/${output_base}_udp_init".*
+rm -f "${current_path}/${output_base}_tcp_init".*
 
 echo "==== Done ===="
