@@ -31,13 +31,13 @@ echo "==== Scan Port Detail ===="
 # TCP Detail Scan
 if [[ -n "$port_range_tcp" ]]; then
   echo "→ TCP detail scan"
-  /usr/bin/nmap -A -sS -T4 -Pn "$target" -oA "${current_path}/${output_base}_tcp" --stats-every=1m -p "$port_range_tcp"
+  /usr/bin/nmap -A -sS -T4 -Pn "$target" -oN "${current_path}/${output_base}_tcp.txt" --stats-every=1m -p "$port_range_tcp"
 fi
 
 # UDP Detail Scan
 if [[ -n "$port_range_udp" ]]; then
   echo "→ UDP detail scan"
-  /usr/bin/nmap -A -sU -T4 -Pn "$target" -oA "${current_path}/${output_base}_udp" --stats-every=1m -p "$port_range_udp"
+  /usr/bin/nmap -A -sU -T4 -Pn "$target" -oN "${current_path}/${output_base}_udp.txt" --stats-every=1m -p "$port_range_udp"
 fi
 
 rm -f "${current_path}/${output_base}_udp_init".*
