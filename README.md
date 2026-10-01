@@ -1,4 +1,4 @@
-For the OSCP exam only
+For the OSCP exam and Penetration Testing only
 
 example:
 1. chmod +x port_scan.sh
